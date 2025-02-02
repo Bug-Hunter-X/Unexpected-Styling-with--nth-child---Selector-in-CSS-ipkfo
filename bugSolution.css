@@ -1,0 +1,27 @@
+/* bug.css */
+.container ul li:nth-child(odd) {
+  background-color: lightblue; 
+}
+
+/* Incorrect usage leading to unexpected results */
+.container ul li:nth-child(4n+1) { /*Intended to style every 4th element*/
+ background-color: lightcoral; 
+}
+
+/* bugSolution.css */
+.container ul li:nth-child(odd) {
+  background-color: lightblue; 
+}
+
+/* Corrected usage: addressing the unexpected styling */
+.container ul li:nth-of-type(4n+1) { /*Correctly styles every 4th element*/
+ background-color: lightcoral; 
+} 
+.container ul {
+  list-style: none; /*for better visualization*/
+  padding: 0; 
+} 
+.container ul li {
+ margin-bottom: 5px;
+ padding: 10px;
+}
